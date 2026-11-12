@@ -1,220 +1,61 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f3eb">
-  <title>紅水堂 | KUREMIZUDO</title>
-  <meta name="description" content="紅水堂。創作と日々の記録。漫画、小説、写真、雑記など。">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="紅水堂 KUREMIZUDOH">
+  <title>紅水堂 | KUREMIZUDOH</title>
   <style>
-    :root {
-      --paper: #f7f3eb;
-      --ink: #302b28;
-      --muted: #81776e;
-      --red: #923e36;
-      --line: #ded5c8;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-      line-height: 1.9;
-    }
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--red); }
-    .container { max-width: 960px; margin: auto; padding: 0 28px; }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { font-size: 22px; letter-spacing: .18em; font-weight: bold; }
-    nav { display: flex; flex-wrap: wrap; gap: 20px; }
-    nav a { font: 12px Georgia, serif; letter-spacing: .1em; }
-    .hero {
-      min-height: 430px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      padding: 90px 0;
-    }
-    .leaf {
-      position: absolute;
-      top: 52px;
-      right: 12%;
-      color: var(--red);
-      opacity: .65;
-      font-size: 45px;
-      transform: rotate(-25deg);
-    }
-    .hero .eyebrow {
-      font: 12px Georgia, serif;
-      letter-spacing: .35em;
-      color: var(--red);
-    }
-    h1 {
-      margin: 24px 0 6px;
-      font-size: clamp(44px, 9vw, 78px);
-      font-weight: normal;
-      letter-spacing: .24em;
-      text-indent: .24em;
-    }
-    .reading { font-size: 12px; letter-spacing: .3em; color: var(--muted); }
-    .tagline { margin-top: 40px; font-size: 14px; color: var(--muted); }
-    .section { padding: 55px 0; border-top: 1px solid var(--line); }
-    h2 { margin: 0 0 26px; font-size: 23px; font-weight: normal; }
-    h2 small {
-      margin-left: 14px;
-      font: 11px Georgia, serif;
-      color: var(--red);
-      letter-spacing: .12em;
-    }
-    .intro { max-width: 660px; font-size: 15px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .tile {
-      border: 1px solid var(--line);
-      padding: 26px 22px;
-      min-height: 156px;
-      transition: border-color .2s, background .2s;
-    }
-    .tile:hover { border-color: var(--red); background: #fffaf3; }
-    .tile strong { display: block; font-size: 18px; font-weight: normal; }
-    .tile span { font: 11px Georgia, serif; color: var(--red); }
-    .tile p { font-size: 13px; color: var(--muted); }
-    .entry {
-      display: flex;
-      gap: 28px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 14px;
-    }
-    time { color: var(--muted); white-space: nowrap; }
-    .button-link {
-      display: inline-block;
-      margin-top: 24px;
-      border-bottom: 1px solid var(--red);
-      color: var(--red);
-      font-size: 14px;
-    }
-    footer {
-      padding: 45px 0;
-      text-align: center;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font: 12px Georgia, serif;
-      letter-spacing: .12em;
-    }
-    @media (max-width: 650px) {
-      header { display: block; text-align: center; }
-      nav { justify-content: center; gap: 14px; margin-top: 16px; }
-      .grid { grid-template-columns: 1fr; }
-      .tile { min-height: auto; }
-      .hero { min-height: 350px; }
-      .entry { display: block; }
-      .entry time { display: block; }
-    }
+    :root { --paper:#fafafa; --ink:#252525; --accent:#873c38; --sub:#777; --line:#e7e4e1; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif; }
+    a { color:inherit; text-decoration:none; }
+    a:hover, a:focus-visible { color:var(--accent); }
+    .wrap { width:min(900px, calc(100% - 48px)); margin-inline:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .wordmark { font-size:20px; font-weight:600; letter-spacing:.18em; white-space:nowrap; }
+    nav { display:flex; gap:22px; flex-wrap:wrap; font:11px/1.7 Georgia,serif; letter-spacing:.11em; }
+    .hero { min-height:66vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:90px 0 110px; }
+    .roman { font:12px/1.5 Georgia,serif; color:var(--accent); letter-spacing:.34em; padding-left:.34em; }
+    h1 { font-size:clamp(44px,8vw,80px); font-weight:400; letter-spacing:.24em; padding-left:.24em; margin:27px 0 25px; line-height:1.4; }
+    .ornament { color:var(--accent); font-size:16px; opacity:.8; }
+    section { border-top:1px solid var(--line); padding:47px 0 56px; }
+    h2 { font:13px/1.6 Georgia,serif; letter-spacing:.24em; color:var(--accent); margin:0 0 25px; }
+    .links { display:flex; flex-wrap:wrap; gap:16px 38px; line-height:2; }
+    .links a { border-bottom:1px solid var(--line); padding-bottom:3px; }
+    .muted { color:var(--sub); font-size:13px; line-height:2; margin:0; }
+    footer { padding:38px 0 50px; color:var(--sub); font:11px Georgia,serif; letter-spacing:.18em; text-align:center; border-top:1px solid var(--line); }
+    @media(max-width:640px) { header { flex-direction:column; } nav { justify-content:center; gap:10px 18px; } .hero { min-height:55vh; padding:80px 0; } section { padding:36px 0 45px; } }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
-      <a class="brand" href="#home">紅水堂</a>
-      <nav aria-label="メインメニュー">
-        <a href="#about">ABOUT</a>
+      <a class="wordmark" href="#home">紅水堂</a>
+      <nav aria-label="Main navigation">
         <a href="#works">WORKS</a>
+        <a href="#creations">CREATIONS</a>
         <a href="#diary">DIARY</a>
         <a href="#gallery">GALLERY</a>
-        <a href="#links">LINKS</a>
+        <a href="#about">ABOUT</a>
       </nav>
     </header>
-
     <main id="home">
-      <section class="hero">
-        <span class="leaf" aria-hidden="true">🍁</span>
-        <div>
-          <div class="eyebrow">KUREMIZUDO</div>
-          <h1>紅水堂</h1>
-          <div class="reading">くれみずどう</div>
-          <p class="tagline">創作と日々の記録。</p>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <h2>紅水堂について <small>ABOUT</small></h2>
-        <p class="intro">
-          漫画、小説、写真、そして日々のあれこれ。<br>
-          ここは、創作したものや記録を少しずつ置いていく場所です。
-        </p>
-        <p class="intro">
-          気まぐれな更新ですが、どうぞごゆっくり。
-        </p>
-      </section>
-
-      <section class="section" id="works">
-        <h2>作品 <small>WORKS</small></h2>
-        <div class="grid">
-          <div class="tile">
-            <span>MANGA</span>
-            <strong>漫画</strong>
-            <p>制作した漫画や創作作品を掲載予定。</p>
-          </div>
-          <div class="tile">
-            <span>FICTION</span>
-            <strong>小説</strong>
-            <p>短編小説や物語を掲載予定。</p>
-          </div>
-          <div class="tile">
-            <span>PROFESSIONAL</span>
-            <strong>仕事歴</strong>
-            <p>監督・演出などの仕事歴を整理する予定。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="diary">
-        <h2>日記 <small>DIARY</small></h2>
-        <div class="entry">
-          <time>準備中</time>
-          <div>日々の記録を、ここに少しずつ綴っていきます。</div>
-        </div>
-        <p style="font-size:13px;color:var(--muted)">
-          ※ 日記の投稿・一覧機能は後から追加します。
-        </p>
-      </section>
-
-      <section class="section" id="gallery">
-        <h2>画廊 <small>GALLERY</small></h2>
-        <p class="intro">イラストや写真を掲載予定です。</p>
-      </section>
-
-      <section class="section" id="links">
-        <h2>外への窓 <small>LINKS</small></h2>
-        <p class="intro">
-          お知らせや外部での活動はこちらから。
-        </p>
-        <a class="button-link"
-           href="https://x.com/kuremizudoh"
-           target="_blank"
-           rel="noopener noreferrer">X / 紅水堂</a>
-      </section>
+      <div class="hero">
+        <div class="roman">KUREMIZUDOH</div>
+        <h1>紅水堂</h1>
+        <span class="ornament" aria-hidden="true">◆</span>
+      </div>
+      <section id="works"><h2>WORKS</h2><p class="muted">Coming soon.</p></section>
+      <section id="creations"><h2>CREATIONS</h2><p class="muted">Coming soon.</p></section>
+      <section id="diary"><h2>DIARY</h2><p class="muted">Coming soon.</p></section>
+      <section id="gallery"><h2>GALLERY</h2><p class="muted">Coming soon.</p></section>
+      <section id="about"><h2>ABOUT</h2><div class="links"><a href="https://x.com/kuremizudoh" target="_blank" rel="noopener noreferrer">X</a><a href="https://kuremizudoh.tumblr.com/about" target="_blank" rel="noopener noreferrer">TUMBLR</a></div></section>
     </main>
-
-    <footer>
-      &copy; KUREMIZUDO
-    </footer>
+    <footer>© KUREMIZUDOH</footer>
   </div>
 </body>
 </html>
